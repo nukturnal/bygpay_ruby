@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'BygPay/version'
+require 'bygpay/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "BygPay"
+  spec.name          = "bygpay"
   spec.version       = BygPay::VERSION
   spec.authors       = ["Alfred Rowe"]
   spec.email         = ["alfred@encodevlabs.com"]

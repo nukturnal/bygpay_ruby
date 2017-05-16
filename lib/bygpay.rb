@@ -5,6 +5,10 @@ require 'bygpay/deposits'
 require 'bygpay/deposit/mobile'
 
 module Bygpay
+  SUCCESS = 'success'
+  FAIL = 'fail'
+  PENDING = 'pending'
+
   class << self
     attr_accessor :configuration
   end

@@ -43,7 +43,7 @@ module Bygpay
     end
 
     def http_connect
-      HTTP.headers(Authorization: Bygpay.configuration.api_key)
+      HTTP[Authorization: Bygpay.configuration.api_key]
     end
   end
 end

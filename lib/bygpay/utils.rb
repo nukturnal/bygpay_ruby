@@ -18,7 +18,8 @@ module Bygpay
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
       p url
       p payload
-      result = HTTP.headers(Authorization: Bygpay.configuration.api_key).post(url, json: payload)
+
+      result = http_connect.post(url, json: payload)
 
       parse_response(result.body)
     end
@@ -26,7 +27,7 @@ module Bygpay
     def get_status(endpoint, uuid)
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
       p url
-      result = HTTP.headers(Authorization: Bygpay.configuration.api_key).get("#{url}/#{uuid}")
+      result = http_connect.get("#{url}/#{uuid}")
 
       parse_response(result.body)
     end
@@ -39,6 +40,10 @@ module Bygpay
       @uuid = result['data']['uuid']
       @status = result['data']['status']
       @response = result['status'] == 'success' ? true : false
+    end
+
+    def http_connect
+      HTTP.headers(Authorization: Bygpay.configuration.api_key)
     end
   end
 end

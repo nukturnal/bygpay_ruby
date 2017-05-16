@@ -5,12 +5,12 @@ require 'bygpay/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "bygpay"
-  spec.version       = BygPay::VERSION
+  spec.version       = Bygpay::VERSION
   spec.authors       = ["Alfred Rowe"]
   spec.email         = ["alfred@encodevlabs.com"]
 
-  spec.summary       = "BygPay Payment Gateway Ruby SDK"
-  spec.description   = "Ruby Wrapper to process payments via any installed BygPay Payment Gateway"
+  spec.summary       = "Bygpay Payment Gateway Ruby SDK"
+  spec.description   = "Ruby Wrapper to process payments via any installed Bygpay Payment Gateway"
   spec.homepage      = "http://bygpay.com"
   spec.license       = "MIT"
 

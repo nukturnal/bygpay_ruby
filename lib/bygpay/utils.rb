@@ -19,7 +19,6 @@ module Bygpay
     # Post payload
     def post(endpoint, payload = {})
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
-      p url
       result = http_connect.post(url, json: payload)
 
       parse_response(result.body)
@@ -47,9 +46,7 @@ module Bygpay
     #     }
     # }
     def parse_response(body)
-      puts body
       result = JSON.parse(body)
-      p result
       @result = result
       @transaction_id = result['data']['trnx_code']
       @response_text = result['message']

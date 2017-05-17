@@ -1,8 +1,6 @@
 # Bygpay
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bygpay`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ruby wrapper around Bygpay Payment Gateway. Bygpay is a self hosted payment processing gateway which gives merchants / business better flexiblity and control when it comes to payment processing.
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Setup few configs before use. If you using Rails you can put this in your `initializers` directory eg `initializers/bygpay.rb`
+
+```ruby
+Bygpay.configure do |config|
+  config.base_url = 'http://gateway.bygpay-server.com/api'
+  config.api_key = '8b4e5a9c-6eba-4cdd-94b6-65e6b514'
+
+  # Optional Configurations 
+  # (In case you've changed routes in your Bygpay Installation)
+  config.deposits_mobile_path = '/deposits/mobile'
+  config.deposits_status_overide_path = '/deposits/status-overide'
+  config.deposit_status_path = '/deposits'
+end
+```
 
 ## Development
 

@@ -4,8 +4,8 @@ module Bygpay
                   :deposits_mobile_path, :deposits_status_overide_path, :deposit_status_path
 
     def initialize
-      @base_url = 'http://engine.bygpay.com/api'
-      @api_key = ''
+      @base_url = nil
+      @api_key = nil
 
       # Preset default paths but allow for changes
       @deposits_mobile_path = '/deposits/mobile'

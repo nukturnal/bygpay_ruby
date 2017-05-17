@@ -8,11 +8,12 @@ module Bygpay
       #     "provider": "TIGO",
       #     "extrnx_code": null
       # }
+      # Perform a mobile deposit request
       def charge(amount, payload ={})
-        post(mobile_endpoint, payload.merge({amount: amount}))
+        post(mobile_deposit_endpoint, payload.merge({amount: amount}))
       end
 
-      # Return transaction status
+      # Return deposit transaction status
       def transaction_status(uuid)
         get_status(deposits_status_endpoint,uuid)
       end

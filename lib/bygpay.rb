@@ -3,6 +3,8 @@ require 'bygpay/configuration'
 require 'bygpay/utils'
 require 'bygpay/deposits'
 require 'bygpay/deposit/mobile'
+require 'bygpay/withdrawals'
+require 'bygpay/withdraw/mobile'
 
 module Bygpay
 

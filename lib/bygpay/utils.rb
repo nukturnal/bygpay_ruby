@@ -4,7 +4,8 @@ module Bygpay
   module Utils
     extend self
 
-    attr_accessor :status, :response_text, :transaction_id, :uuid, :result, :response
+    attr_accessor :status, :response_text, :transaction_id,
+                  :uuid, :result, :response
 
     # Mobile Deposit transactions endpoint
     def mobile_deposit_endpoint
@@ -58,13 +59,12 @@ module Bygpay
     #     }
     # }
     def parse_response(body)
-      result = JSON.parse(body)
-      @result = result
-      @transaction_id = result['data']['trnx_code']
-      @response_text = result['message']
-      @uuid = result['data']['uuid']
-      @status = result['data']['status']
-      @response = result['status'] == 'success'
+      @result = JSON.parse(body)
+      @transaction_id = @result['data']['trnx_code']
+      @response_text = @result['message']
+      @uuid = @result['data']['uuid']
+      @status = @result['data']['status']
+      @response = @result['status'] == 'success'
     end
 
     # global Bygpay connect

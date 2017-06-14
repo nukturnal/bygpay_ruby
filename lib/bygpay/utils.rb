@@ -45,6 +45,7 @@ module Bygpay
 
     # {
     #     "status": "success",
+    #     "message": "Some messages",
     #     "data": {
     #         "uuid": "d1f3395e-ea08-4599-b8a5-41f5e7a4",
     #         "status": "accepted",

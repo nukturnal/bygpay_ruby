@@ -2,7 +2,7 @@ require 'http'
 
 module Bygpay
   module Utils
-    extend self
+    module_function
 
     attr_accessor :status, :response_text, :transaction_id, :uuid, :result, :response
 

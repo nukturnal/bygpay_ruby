@@ -29,11 +29,95 @@ Bygpay.configure do |config|
   config.base_url = 'http://gateway.bygpay-server.com/api'
   config.api_key = '8b4e5a9c-6eba-4cdd-94b6-65e6b514'
 
-  # Optional Configurations 
+  # Optional Configurations (Every code below this line)
   # (In case you've changed routes in your Bygpay Installation)
-  config.deposits_mobile_path = '/deposits/mobile'
-  config.deposits_status_overide_path = '/deposits/status-overide'
+  config.deposit_mobile_path = '/deposits/mobile'
+  config.deposit_status_overide_path = '/deposits/status-overide'
   config.deposit_status_path = '/deposits'
+  
+  config.withdraw_mobile_path = '/withdrawals/mobile'
+  config.withdraw_status_overide_path = '/withdrawals/status-overide'
+  config.withdraw_status_path = '/withdrawals'
+end
+```
+
+## Transaction Statuses
+
+Bygpay gateway uses four types of status messages to mark transactions.
+* `accepted` A transaction is marked as `accepted` when it's initially receives the request from a client
+* `pending` A transaction is marked a `pending` when the Gateway begins processing
+* `success` A final status message `success` is used when processing completes successfully
+* `fail` A final status message `fail' is used when the processing completes unsuccessfully
+
+## Deposit Requests
+
+#### Mobile Money
+
+Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options.
+
+```ruby
+# Making a Mobile Money Deposit Request
+deposit = Bygpay::Deposit::Mobile.new
+result = deposit.charge(1.99,{walletno: '0244124550', provider: 'MTN'})
+if result
+	puts deposit.uuid
+	puts deposit.status # accepted, :pending, :fail, :success
+	puts deposit.transaction_id
+else
+	puts deposit.response_text
+	puts deposit.status
+end
+```
+
+Query Transaction status
+```ruby
+# Checking transaction status
+# You always need the transaction UUID to get status response
+deposit = Bygpay::Deposit::Mobile.new
+result = deposit.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
+if result
+	puts deposit.uuid
+	puts deposit.status # accepted, :pending, :fail, :success
+	puts deposit.transaction_id
+else
+	puts deposit.response_text
+	puts deposit.status
+end
+```
+
+## Withdraw Requests
+
+#### Mobile Money
+
+Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options.
+
+```ruby
+# Making a Mobile Money Withdrawal Request
+withdraw = Bygpay::Withdraw::Mobile.new
+result = withdraw.send(1.99,{walletno: '0244124550', provider: 'MTN'})
+if result
+	puts withdraw.uuid
+	puts withdraw.status # accepted, :pending, :fail, :success
+	puts withdraw.transaction_id
+else
+	puts withdraw.response_text
+	puts withdraw.status
+end
+```
+
+Query Transaction status
+```ruby
+# Checking transaction status
+# You always need the transaction UUID to get status response
+withdraw = Bygpay::Withdraw::Mobile.new
+result = withdraw.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
+if result
+	puts withdraw.uuid
+	puts withdraw.status # accepted, :pending, :fail, :success
+	puts withdraw.transaction_id
+else
+	puts withdraw.response_text
+	puts withdraw.status
 end
 ```
 

@@ -1,16 +1,22 @@
 module Bygpay
   class Configuration
     attr_accessor :base_url, :api_key,
-                  :deposits_mobile_path, :deposits_status_overide_path, :deposit_status_path
+                  :deposit_mobile_path, :deposit_status_overide_path, :deposit_status_path,
+                  :withdraw_mobile_path, :withdraw_status_overide_path, :withdraw_status_path,
 
     def initialize
       @base_url = nil
       @api_key = nil
 
       # Preset default paths but allow for changes
-      @deposits_mobile_path = '/deposits/mobile'
-      @deposits_status_overide_path = '/deposits/status-overide'
+      @deposit_mobile_path = '/deposits/mobile'
+      @deposit_status_overide_path = '/deposits/status-overide'
       @deposit_status_path = '/deposits'
+
+      # Preset default paths but allow for changes
+      @withdraw_mobile_path = '/withdrawals/mobile'
+      @withdraw_status_overide_path = '/withdrawals/status-overide'
+      @withdraw_status_path = '/withdrawals'
     end
   end
 end

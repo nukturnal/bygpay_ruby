@@ -1,6 +1,6 @@
 module Bygpay
-  module Deposit
-    class Mobile < Bygpay::Deposits
+  module Withdraw
+    class Mobile < Bygpay::Withdrawals
 
       # {
       #     "walletno" : "0276967627",
@@ -10,12 +10,12 @@ module Bygpay
       # }
       # Perform a mobile deposit request
       def charge(amount, payload ={})
-        post(mobile_deposit_endpoint, payload.merge({amount: amount}))
+        post(mobile_withdraw_endpoint, payload.merge({amount: amount}))
       end
 
       # Return deposit transaction status
       def transaction_status(uuid)
-        get_status(deposit_status_endpoint,uuid)
+        get_status(withdraw_status_endpoint,uuid)
       end
 
     end

@@ -8,12 +8,22 @@ module Bygpay
 
     # Mobile Deposit transactions endpoint
     def mobile_deposit_endpoint
-      Bygpay.configuration.deposits_mobile_path
+      Bygpay.configuration.deposit_mobile_path
     end
 
     # Deposit transactions status check endpoint
-    def deposits_status_endpoint
+    def deposit_status_endpoint
       Bygpay.configuration.deposit_status_path
+    end
+
+    # Mobile Withdrawal transactions endpoint
+    def mobile_withdraw_endpoint
+      Bygpay.configuration.withdraw_mobile_path
+    end
+
+    # Withdraw transactions status check endpoint
+    def withdraw_status_endpoint
+      Bygpay.configuration.withdraw_status_path
     end
 
     # Post payload

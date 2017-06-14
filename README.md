@@ -60,12 +60,12 @@ Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay
 deposit = Bygpay::Deposit::Mobile.new
 result = deposit.charge(1.99,{walletno: '0244124550', provider: 'MTN'})
 if result
-	puts deposit.uuid
-	puts deposit.status # accepted, :pending, :fail, :success
-	puts deposit.transaction_id
+  puts deposit.uuid
+  puts deposit.status # accepted, :pending, :fail, :success
+  puts deposit.transaction_id
 else
-	puts deposit.response_text
-	puts deposit.status
+  puts deposit.response_text
+  puts deposit.status
 end
 ```
 
@@ -76,12 +76,12 @@ Query Transaction status
 deposit = Bygpay::Deposit::Mobile.new
 result = deposit.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
 if result
-	puts deposit.uuid
-	puts deposit.status # accepted, :pending, :fail, :success
-	puts deposit.transaction_id
+  puts deposit.uuid
+  puts deposit.status # accepted, :pending, :fail, :success
+  puts deposit.transaction_id
 else
-	puts deposit.response_text
-	puts deposit.status
+  puts deposit.response_text
+  puts deposit.status
 end
 ```
 
@@ -96,12 +96,12 @@ Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay
 withdraw = Bygpay::Withdraw::Mobile.new
 result = withdraw.send(1.99,{walletno: '0244124550', provider: 'MTN'})
 if result
-	puts withdraw.uuid
-	puts withdraw.status # accepted, :pending, :fail, :success
-	puts withdraw.transaction_id
+  puts withdraw.uuid
+  puts withdraw.status # accepted, :pending, :fail, :success
+  puts withdraw.transaction_id
 else
-	puts withdraw.response_text
-	puts withdraw.status
+  puts withdraw.response_text
+  puts withdraw.status
 end
 ```
 
@@ -112,12 +112,12 @@ Query Transaction status
 withdraw = Bygpay::Withdraw::Mobile.new
 result = withdraw.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
 if result
-	puts withdraw.uuid
-	puts withdraw.status # accepted, :pending, :fail, :success
-	puts withdraw.transaction_id
+  puts withdraw.uuid
+  puts withdraw.status # accepted, :pending, :fail, :success
+  puts withdraw.transaction_id
 else
-	puts withdraw.response_text
-	puts withdraw.status
+  puts withdraw.response_text
+  puts withdraw.status
 end
 ```
 

@@ -4,7 +4,6 @@ module Bygpay
 
       # {
       #     "walletno" : "0276967627",
-      #     "amount": 0.10,
       #     "provider": "TIGO",
       #     "extrnx_code": null
       # }

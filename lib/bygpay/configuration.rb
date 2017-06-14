@@ -13,7 +13,6 @@ module Bygpay
       @deposit_status_overide_path = '/deposits/status-overide'
       @deposit_status_path = '/deposits'
 
-      # Preset default paths but allow for changes
       @withdraw_mobile_path = '/withdrawals/mobile'
       @withdraw_status_overide_path = '/withdrawals/status-overide'
       @withdraw_status_path = '/withdrawals'

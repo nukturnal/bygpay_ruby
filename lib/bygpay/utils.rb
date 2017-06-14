@@ -2,7 +2,7 @@ require 'http'
 
 module Bygpay
   module Utils
-    extend self
+    module_function
 
     attr_accessor :status, :response_text, :transaction_id, :uuid, :result, :response
 
@@ -29,6 +29,7 @@ module Bygpay
     # Post payload
     def post(endpoint, payload = {})
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
+      puts "URL: #{url}"
       result = http_connect.post(url, json: payload)
 
       parse_response(result.body)

@@ -8,7 +8,7 @@ module Bygpay
       #     "extrnx_code": null
       # }
       # Perform a mobile deposit request
-      def charge(amount, payload ={})
+      def send(amount, payload ={})
         post(mobile_withdraw_endpoint, payload.merge({amount: amount}))
       end
 

@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Bygpay Payment Gateway Ruby SDK"
   spec.description   = "Ruby Wrapper to process payments via any installed Bygpay Payment Gateway"
-  spec.homepage      = "https://github.com/nukturnal/bygpay"
+  spec.homepage      = "https://github.com/nukturnal/bygpay_ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

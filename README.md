@@ -1,6 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master)
 
-# Bygpay
+# Bygpay Ruby SDK
 
 Ruby wrapper around Bygpay Payment Gateway. Bygpay is a self hosted payment processing gateway which gives merchants / business better flexiblity and control when it comes to payment processing.
 
@@ -129,7 +129,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nukturnal/bygpay. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nukturnal/bygpay_ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

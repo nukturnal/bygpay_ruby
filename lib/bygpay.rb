@@ -1,5 +1,6 @@
 require 'bygpay/version'
 require 'bygpay/configuration'
+require 'bygpay/byg_response'
 require 'bygpay/utils'
 require 'bygpay/deposits'
 require 'bygpay/deposit/mobile'

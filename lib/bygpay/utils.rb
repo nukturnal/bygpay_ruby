@@ -30,7 +30,6 @@ module Bygpay
     # Post payload
     def post(endpoint, payload = {})
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
-      puts "URL: #{url}"
       result = http_connect.post(url, json: payload)
 
       parse_response(result.body)
@@ -44,27 +43,15 @@ module Bygpay
       parse_response(result.body)
     end
 
-    # {
-    #     "status": "success",
-    #     "message": "Some messages",
-    #     "data": {
-    #         "uuid": "d1f3395e-ea08-4599-b8a5-41f5e7a4",
-    #         "status": "accepted",
-    #         "trnx_code": "DTX00000008",
-    #         "provider_txid": null,
-    #         "extrnx_code": null,
-    #         "walletno": "0276967627",
-    #         "amount": 0.1,
-    #         "provider": "TIGO"
-    #     }
-    # }
-    def parse_response(body)
-      @result = JSON.parse(body)
-      @transaction_id = @result['data']['trnx_code']
-      @response_text = @result['message']
-      @uuid = @result['data']['uuid']
-      @status = @result['data']['status']
-      @response = @result['status'] == 'success'
+    # Parse on JSON Body to BygResponse for parsing and processing
+    def parse_response(json_payload)
+      @response = Bygpay::BygResponse.parse_response(json_payload)
+      resp = @response.data
+      @transaction_id = resp.data.trnx_code
+      @response_text = resp.message
+      @uuid = resp.data.uuid
+      @status = @response.transaction_status
+      @result = @response.request_successful?
     end
 
     # global Bygpay connect

@@ -7,3 +7,6 @@
 #####v0.2.0
 * Fixed Bugs
 * MoMo Withdrawal Support
+
+####pre-0.2.1
+* Added Better Response Management

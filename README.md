@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master)
+[![Gem Version](https://badge.fury.io/rb/bygpay.svg)](https://badge.fury.io/rb/bygpay) [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master)
 
 # Bygpay Ruby SDK
 

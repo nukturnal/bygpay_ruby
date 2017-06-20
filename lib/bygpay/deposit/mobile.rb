@@ -8,15 +8,9 @@ module Bygpay
       #     "extrnx_code": null
       # }
       # Perform a mobile deposit request
-      def charge(amount, payload ={})
-        post(mobile_deposit_endpoint, payload.merge({amount: amount}))
+      def charge(amount, mobile_data = {})
+        post(mobile_deposit_endpoint, mobile_data.merge({amount: amount}))
       end
-
-      # Return deposit transaction status
-      def transaction_status(uuid)
-        get_status(deposit_status_endpoint,uuid)
-      end
-
     end
   end
 end

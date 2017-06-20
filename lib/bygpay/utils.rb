@@ -12,6 +12,11 @@ module Bygpay
       Bygpay.configuration.deposit_mobile_path
     end
 
+    # Mobile Deposit transactions endpoint
+    def card_deposit_endpoint
+      Bygpay.configuration.deposit_card_path
+    end
+
     # Deposit transactions status check endpoint
     def deposit_status_endpoint
       Bygpay.configuration.deposit_status_path

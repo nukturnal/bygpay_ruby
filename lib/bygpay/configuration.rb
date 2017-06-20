@@ -10,6 +10,7 @@ module Bygpay
 
       # Preset default paths but allow for changes
       @deposit_mobile_path = '/deposits/mobile'
+      @deposit_card_path = '/deposits/card'
       @deposit_status_overide_path = '/deposits/status-overide'
       @deposit_status_path = '/deposits'
 

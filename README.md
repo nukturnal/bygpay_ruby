@@ -53,12 +53,57 @@ Bygpay gateway uses four types of status messages to mark transactions.
 
 #### Mobile Money
 
-Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options.
+Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options. 
+
+Mobile Money transactions are not onetime requests because of their inherent nature, need to rely on checking the transaction status or callback POST from Bygpay Gateway to verify the status of the transaction. 
 
 ```ruby
 # Making a Mobile Money Deposit Request
 deposit = Bygpay::Deposit::Mobile.new
 result = deposit.charge(1.99,{walletno: '0244124550', provider: 'MTN'})
+if result
+  puts deposit.uuid
+  puts deposit.status # accepted, :pending, :fail, :success
+  puts deposit.transaction_id
+else
+  puts deposit.response_text
+  puts deposit.status
+end
+```
+
+Query Transaction status
+```ruby
+# Checking transaction status
+# You always need the transaction UUID to get status response
+deposit = Bygpay::Deposit::Mobile.new
+result = deposit.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
+if result
+  puts deposit.uuid # need uuid to check transacion status
+  puts deposit.status # accepted, :pending, :fail, :success
+  puts deposit.transaction_id
+else
+  puts deposit.response_text
+  puts deposit.status
+end
+```
+#### Debit/Credit Card
+
+Supports VISA, MasterCard and any other cards based on the processors available on Bygpay Gateway. This is a onetime transaction and immediate response is the final status of the transaction. However transaction status request is still available
+
+```ruby
+# Making a Mobile Money Deposit Request
+deposit = Bygpay::Deposit::Card.new
+card_data = { 
+  card_number: '4111111111111111', 
+  amount: 0.10, 
+  expiry_month: 6, 
+  expiry_year: 2017, 
+  cvv: 123,
+  country: 'GH', # Optional country ISO code
+  currency: 'USD', # Optional currency ISO code
+  card_name: 'Gifty Cobbinah'
+}
+result = deposit.charge(1.99, card_data)
 if result
   puts deposit.uuid
   puts deposit.status # accepted, :pending, :fail, :success

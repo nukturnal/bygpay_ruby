@@ -11,8 +11,8 @@ RSpec.configure do |config|
 
   config.before(:all) do
     Bygpay.configure do |c|
-      c.base_url = 'https://engine.bygpay.com/api'
-      c.api_key = 'e65815c6-6c7f-4cbb-91eb-3cbb0262'
+      c.base_url = ENV['BYGPAY_BASE_URL']
+      c.api_key = ENV['BYGPAY_API_KEY']
     end
 
     @mobile_deposit = Bygpay::Deposit::Mobile.new

@@ -4,6 +4,7 @@ require 'bygpay/byg_response'
 require 'bygpay/utils'
 require 'bygpay/deposits'
 require 'bygpay/deposit/mobile'
+require 'bygpay/deposit/card'
 require 'bygpay/withdrawals'
 require 'bygpay/withdraw/mobile'
 

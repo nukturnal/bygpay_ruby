@@ -10,3 +10,7 @@
 
 ####pre-0.2.1
 * Added Better Response Management
+
+####v0.2.2
+* Bankcard support Added
+* Codebase Improved

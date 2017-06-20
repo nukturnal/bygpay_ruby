@@ -1,3 +1,5 @@
+require 'hashie'
+
 module Bygpay
   class BygResponse
     SUCCESS = 'success'

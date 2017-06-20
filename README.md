@@ -154,7 +154,7 @@ Query Transaction status
 ```ruby
 # Checking transaction status
 # You always need the transaction UUID to get status response
-withdraw = Bygpay::Withdraw::Mobile.new
+withdraw = Bygpay::Withdraw::Card.new
 result = withdraw.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
 if result
   puts withdraw.uuid

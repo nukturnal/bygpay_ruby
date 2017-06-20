@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/bygpay.svg)](https://badge.fury.io/rb/bygpay) [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master)
+[![Gem Version](https://badge.fury.io/rb/bygpay.svg)](https://badge.fury.io/rb/bygpay) [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7425ac54e6484723a5482a92fc7f35ef)](https://www.codacy.com/app/nukturnal/bygpay?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukturnal/bygpay&amp;utm_campaign=Badge_Grade)
 
 # Bygpay Ruby SDK
 

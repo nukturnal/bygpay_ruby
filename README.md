@@ -92,6 +92,7 @@ Supports VISA, MasterCard and any other cards based on the processors available 
 
 ```ruby
 # Making a Mobile Money Deposit Request
+# Please note that some of the optional fields might be required base on which processors the BygPay Gateway is using.
 deposit = Bygpay::Deposit::Card.new
 card_data = { 
   card_number: '4111111111111111', 
@@ -101,7 +102,7 @@ card_data = {
   cvv: 123,
   country: 'GH', # Optional country ISO code
   currency: 'USD', # Optional currency ISO code
-  card_name: 'Gifty Cobbinah'
+  card_name: 'Gifty Cobbinah' # Optional Card Hold Name
 }
 result = deposit.charge(1.99, card_data)
 if result

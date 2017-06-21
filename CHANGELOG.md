@@ -14,3 +14,7 @@
 ####v0.2.2
 * Bankcard support Added
 * Codebase Improved
+
+####v0.2.3
+* Currency Support Added to Deposits
+* Added Tests Coverage

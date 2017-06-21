@@ -60,7 +60,13 @@ Mobile Money transactions are not onetime requests because of their inherent nat
 ```ruby
 # Making a Mobile Money Deposit Request
 deposit = Bygpay::Deposit::Mobile.new
-result = deposit.charge(1.99,{walletno: '0244124550', provider: 'MTN'})
+mobile_payload = {
+  walletno: '0244124550', 
+  provider: 'MTN',
+  currency: 'USD', # optional
+  extrnx_code: nil # optional
+}
+result = deposit.charge(1.99, mobile_payload)
 if result
   puts deposit.uuid
   puts deposit.status # accepted, :pending, :fail, :success

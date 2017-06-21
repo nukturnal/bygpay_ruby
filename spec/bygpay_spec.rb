@@ -18,6 +18,16 @@ RSpec.describe Bygpay do
         expect(@mobile_deposit.transaction_id).not_to be_empty
       end
 
+      it 'should return true when valid currency is included in payload' do
+        response = @mobile_deposit.charge(@deposit_amount, @valid_mobile_payload.merge(@valid_currency))
+        expect(response).to eql true
+      end
+
+      it 'should return false when invalid currency is included in payload' do
+        response = @mobile_deposit.charge(@deposit_amount, @valid_mobile_payload.merge(@invalid_currency))
+        expect(response).to eql false
+      end
+
       it 'should return false on validation error for charge method call' do
         response = @mobile_deposit.charge(@deposit_amount, @invalid_mobile_payload)
         expect(response).to eql false
@@ -46,6 +56,16 @@ RSpec.describe Bygpay do
         # This relies directly on the above spec (for speed)
         # Change this with caution
         expect(@card_deposit.transaction_id).not_to be_empty
+      end
+
+      it 'should return true when valid currency is included in payload' do
+        response = @card_deposit.charge(@deposit_amount, @valid_card_payload.merge(@valid_currency))
+        expect(response).to eql true
+      end
+
+      it 'should return false when invalid currency is included in payload' do
+        response = @card_deposit.charge(@deposit_amount, @valid_card_payload.merge(@invalid_currency))
+        expect(response).to eql false
       end
 
       it 'should return false on validation error for charge method call' do

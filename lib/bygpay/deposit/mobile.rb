@@ -5,6 +5,7 @@ module Bygpay
       # {
       #     "walletno" : "0276967627",
       #     "provider": "TIGO",
+      #     "currency": "USD",
       #     "extrnx_code": null
       # }
       # Perform a mobile deposit request

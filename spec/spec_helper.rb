@@ -15,6 +15,9 @@ RSpec.configure do |config|
       c.api_key = ENV['BYGPAY_API_KEY']
     end
 
+    @valid_currency = { currency: 'USD'}
+    @invalid_currency = { currency: 'HRB'}
+
     @mobile_deposit = Bygpay::Deposit::Mobile.new
     @mobile_withdraw = Bygpay::Withdraw::Mobile.new
     @valid_mobile_payload = { walletno: '0244000001', provider: 'MTN' }

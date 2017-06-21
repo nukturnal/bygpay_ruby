@@ -1,7 +1,8 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=ea1ac3f76e7689a49786a2b7d8fa8ace6ef3f87f7c00825fed66ca6cc22dc4be
-    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+addons:
+  code_climate:
+    repo_token: ea1ac3f76e7689a49786a2b7d8fa8ace6ef3f87f7c00825fed66ca6cc22dc4be
+after_success:
+  - bundle exec codeclimate-test-reporter
 sudo: false
 language: ruby
 rvm:
@@ -11,15 +12,3 @@ rvm:
   - 2.1.0
   - 2.0.0
 before_install: gem install bundler -v 1.14.6
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-script:
-  - bundle exec rspec
-  # Preferably you will run test-reporter on branch update events. But
-  # if you setup travis to build PR updates only, you don't need to run
-  # the line below
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
-  # In the case where travis is setup to build PR updates only,
-  # uncomment the line below
-  # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

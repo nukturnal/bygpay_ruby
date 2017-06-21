@@ -3,7 +3,7 @@ require 'http'
 module Bygpay
   module Utils
     attr_accessor :status, :response_text, :transaction_id,
-                  :uuid, :result, :response
+                  :uuid, :result, :response, :amount
 
     # Mobile Deposit transactions endpoint
     def mobile_deposit_endpoint
@@ -50,9 +50,10 @@ module Bygpay
     def parse_response(json_payload)
       @response = Bygpay::BygResponse.parse_response(json_payload)
       resp = @response.data
-      @transaction_id = resp.data.trnx_code
+      @transaction_id = @response.transaction_id
       @response_text = resp.message
-      @uuid = resp.data.uuid
+      @uuid = @response.uuid
+      @amount = @response.amount
       @status = @response.transaction_status
       @result = @response.request_successful?
     end

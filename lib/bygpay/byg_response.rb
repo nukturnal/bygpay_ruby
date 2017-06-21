@@ -29,6 +29,10 @@ module Bygpay
       PENDING.include?(data.data.status)
     end
 
+    def uuid
+      data.data.uuid
+    end
+
     def transaction_id
       data.data.trnx_code
     end

@@ -32,6 +32,7 @@ Bygpay.configure do |config|
   # Optional Configurations (Every code below this line)
   # (In case you've changed routes in your Bygpay Installation)
   config.deposit_mobile_path = '/deposits/mobile'
+  config.deposit_card_path = '/deposits/card'
   config.deposit_status_overide_path = '/deposits/status-overide'
   config.deposit_status_path = '/deposits'
   

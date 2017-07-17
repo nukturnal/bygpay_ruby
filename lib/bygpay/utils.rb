@@ -33,7 +33,7 @@ module Bygpay
     # Post payload
     def post(endpoint, payload = {})
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
-      result = http_connect.post(url, json: payload)
+      result = http_connect.post(url, json: payload, ssl_context: ssl_context)
 
       parse_response(result.body)
     end
@@ -41,7 +41,7 @@ module Bygpay
     # Get transaction status
     def get_status(endpoint, uuid)
       url = "#{Bygpay.configuration.base_url}#{endpoint}"
-      result = http_connect.get("#{url}/#{uuid}")
+      result = http_connect.get("#{url}/#{uuid}", ssl_context: ssl_context)
 
       parse_response(result.body)
     end
@@ -58,6 +58,11 @@ module Bygpay
       @result = @response.request_successful?
     end
 
+    def ssl_context
+      ctx = OpenSSL::SSL::SSLContext.new
+      ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      ctx
+    end
     # global Bygpay connect
     def http_connect
       HTTP[Authorization: Bygpay.configuration.api_key]

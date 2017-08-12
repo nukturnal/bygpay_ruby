@@ -78,21 +78,6 @@ else
 end
 ```
 
-Query Transaction status
-```ruby
-# Checking transaction status
-# You always need the transaction UUID to get status response
-deposit = Bygpay::Deposit::Mobile.new
-result = deposit.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
-if result
-  puts deposit.uuid # need uuid to check transacion status
-  puts deposit.status # accepted, :pending, :fail, :success
-  puts deposit.transaction_id
-else
-  puts deposit.response_text
-  puts deposit.status
-end
-```
 #### Debit/Credit Card
 
 Supports VISA, MasterCard and any other cards based on the processors available on Bygpay Gateway. This is a onetime transaction and immediate response is the final status of the transaction. However transaction status request is still available
@@ -127,7 +112,7 @@ Query Transaction status
 ```ruby
 # Checking transaction status
 # You always need the transaction UUID to get status response
-deposit = Bygpay::Deposit::Card.new
+deposit = Bygpay::Deposits.new
 result = deposit.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
 if result
   puts deposit.uuid
@@ -148,7 +133,7 @@ Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay
 ```ruby
 # Making a Mobile Money Withdrawal Request
 withdraw = Bygpay::Withdraw::Mobile.new
-result = withdraw.send(1.99,{walletno: '0244124550', provider: 'MTN'})
+result = withdraw.sendmoney(1.99,{walletno: '0244124550', provider: 'MTN'})
 if result
   puts withdraw.uuid
   puts withdraw.status # accepted, :pending, :fail, :success
@@ -163,7 +148,7 @@ Query Transaction status
 ```ruby
 # Checking transaction status
 # You always need the transaction UUID to get status response
-withdraw = Bygpay::Withdraw::Mobile.new
+withdraw = Bygpay::Withdrawals.new
 result = withdraw.transaction_status('e81216aa-9ef7-4c5c-aed0-6e5ff1fe')
 if result
   puts withdraw.uuid

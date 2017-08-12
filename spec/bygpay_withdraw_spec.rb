@@ -4,7 +4,7 @@ RSpec.describe Bygpay::Withdrawals do
   describe 'Withdrawal Transactions' do
     context 'Mobile Money' do
       it 'should return true we call the charge method' do
-        response = @mobile_withdraw.send(@withdraw_amount, @valid_mobile_payload)
+        response = @mobile_withdraw.sendmoney(@withdraw_amount, @valid_mobile_payload)
         expect(response).to eql true
       end
 
@@ -23,7 +23,7 @@ RSpec.describe Bygpay::Withdrawals do
       end
 
       it 'should return false on validation error for charge method call' do
-        response = @mobile_withdraw.send(@withdraw_amount, @invalid_mobile_payload)
+        response = @mobile_withdraw.sendmoney(@withdraw_amount, @invalid_mobile_payload)
         expect(response).to eql false
       end
 

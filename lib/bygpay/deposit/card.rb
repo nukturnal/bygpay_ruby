@@ -1,7 +1,6 @@
 module Bygpay
   module Deposit
     class Card < Bygpay::Deposits
-
       # {
       #     "card_number" : "4111111111111111",
       #     "amount": 1.00,
@@ -13,9 +12,8 @@ module Bygpay
       # }
       # Perform a Bankcard debit request
       def charge(amount, card_data = {})
-        post(card_deposit_endpoint, card_data.merge({amount: amount}))
+        post(card_deposit_endpoint, card_data.merge(amount: amount))
       end
-
     end
   end
 end

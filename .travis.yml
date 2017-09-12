@@ -12,3 +12,4 @@ rvm:
   - 2.1.0
   - 2.0.0
 before_install: gem install bundler -v 1.14.6
+group: deprecated-2017Q3

@@ -18,3 +18,7 @@
 ####v0.2.3
 * Currency Support Added to Deposits
 * Added Tests Coverage
+
+####v0.2.4
+* Added Vodafone Payment Examples
+* Token Param documented for weird Vodafone payments

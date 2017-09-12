@@ -65,6 +65,7 @@ mobile_payload = {
   walletno: '0244124550', 
   provider: 'MTN',
   currency: 'USD', # optional
+  token: '23571', # Optional (Only required for Vodafone Payments)
   extrnx_code: nil # optional
 }
 result = deposit.charge(1.99, mobile_payload)

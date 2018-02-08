@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/bygpay.svg)](https://badge.fury.io/rb/bygpay) [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![Test Coverage](https://codeclimate.com/github/nukturnal/bygpay/badges/coverage.svg)](https://codeclimate.com/github/nukturnal/bygpay/coverage) [![Issue Count](https://codeclimate.com/github/nukturnal/bygpay/badges/issue_count.svg)](https://codeclimate.com/github/nukturnal/bygpay) [![codebeat badge](https://codebeat.co/badges/8db86406-18f8-4c2d-bacf-58ac1c700c0a)](https://codebeat.co/projects/github-com-nukturnal-bygpay-master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7425ac54e6484723a5482a92fc7f35ef)](https://www.codacy.com/app/nukturnal/bygpay?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukturnal/bygpay&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/nukturnal/bygpay_ruby.svg?branch=master)](https://travis-ci.org/nukturnal/bygpay_ruby)
+[![Gem Version](https://badge.fury.io/rb/bygpay.svg)](https://badge.fury.io/rb/bygpay) [![Code Climate](https://codeclimate.com/github/nukturnal/bygpay_ruby/badges/gpa.svg)](https://codeclimate.com/github/nukturnal/bygpay_ruby) [![Test Coverage](https://codeclimate.com/github/nukturnal/bygpay_ruby/badges/coverage.svg)](https://codeclimate.com/github/nukturnal/bygpay_ruby/coverage) [![Issue Count](https://codeclimate.com/github/nukturnal/bygpay_ruby/badges/issue_count.svg)](https://codeclimate.com/github/nukturnal/bygpay_ruby) [![codebeat badge](https://codebeat.co/badges/f32a71e8-3b38-4f6f-9018-07fa503e487e)](https://codebeat.co/projects/github-com-nukturnal-bygpay_ruby-master)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7425ac54e6484723a5482a92fc7f35ef)](https://www.codacy.com/app/nukturnal/bygpay_ruby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nukturnal/bygpay_ruby&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/nukturnal/bygpay_ruby.svg?branch=master)](https://travis-ci.org/nukturnal/bygpay_ruby)
 
 # Bygpay Ruby SDK
 
@@ -35,7 +35,7 @@ Bygpay.configure do |config|
   config.deposit_card_path = '/deposits/card'
   config.deposit_status_overide_path = '/deposits/status-overide'
   config.deposit_status_path = '/deposits'
-  
+
   config.withdraw_mobile_path = '/withdrawals/mobile'
   config.withdraw_status_overide_path = '/withdrawals/status-overide'
   config.withdraw_status_path = '/withdrawals'
@@ -54,15 +54,15 @@ Bygpay gateway uses four types of status messages to mark transactions.
 
 #### Mobile Money
 
-Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options. 
+Currently SDK supports MTN, AIRTEL, TIGO, VODAFONE, you may refer to your Bygpay Gateway documentations for more provider options.
 
-Mobile Money transactions are not onetime requests because of their inherent nature, need to rely on checking the transaction status or callback POST from Bygpay Gateway to verify the status of the transaction. 
+Mobile Money transactions are not onetime requests because of their inherent nature, need to rely on checking the transaction status or callback POST from Bygpay Gateway to verify the status of the transaction.
 
 ```ruby
 # Making a Mobile Money Deposit Request
 deposit = Bygpay::Deposit::Mobile.new
 mobile_payload = {
-  walletno: '0244124550', 
+  walletno: '0244124550',
   provider: 'MTN',
   currency: 'USD', # optional
   token: '23571', # Optional (Only required for Vodafone Payments)
@@ -85,14 +85,14 @@ Supports VISA, MasterCard and any other cards based on the processors available 
 
 ```ruby
 # Making a Mobile Money Deposit Request
-# Please note that some of the optional fields might be required base on 
+# Please note that some of the optional fields might be required base on
 # which processors the BygPay Gateway is using.
 deposit = Bygpay::Deposit::Card.new
-card_data = { 
-  card_number: '4111111111111111', 
-  amount: 0.10, 
-  expiry_month: 6, 
-  expiry_year: 2017, 
+card_data = {
+  card_number: '4111111111111111',
+  amount: 0.10,
+  expiry_month: 6,
+  expiry_year: 2017,
   cvv: 123,
   country: 'GH', # Optional country ISO code
   currency: 'USD', # Optional currency ISO code
@@ -175,4 +175,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/nuktur
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

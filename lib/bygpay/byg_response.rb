@@ -4,7 +4,7 @@ module Bygpay
   class BygResponse
     SUCCESS = 'success'
     FAILED = 'fail'
-    PENDING = ['accepted','pending']
+    PENDING = %w(accepted pending)
 
     attr_accessor :data
 

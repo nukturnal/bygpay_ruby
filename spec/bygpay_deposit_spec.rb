@@ -63,20 +63,18 @@ RSpec.describe Bygpay::Deposits do
     end
 
     context 'Debit/Credit Cards' do
-      it 'should return true we call the charge method' do
+      it 'should return false we call the charge method on valid test card' do
         response = @card_deposit.charge(@deposit_amount, @valid_card_payload)
-        expect(response).to eql true
+        expect(response).to eql false
       end
 
       it 'should not have an empty transaction_id when charge method returns true' do
-        # This relies directly on the above spec (for speed)
-        # Change this with caution
         expect(@card_deposit.transaction_id).not_to be_empty
       end
 
       it 'should return true when valid currency is included in payload' do
         response = @card_deposit.charge(@deposit_amount, @valid_card_payload.merge(@valid_currency))
-        expect(response).to eql true
+        expect(response).to eql false
       end
 
       it 'should return false when invalid currency is included in payload' do

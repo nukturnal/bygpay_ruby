@@ -19,7 +19,7 @@ RSpec.describe Bygpay::Withdrawals do
       end
 
       it 'should return valid transaction status flag' do
-        expect(['accepted','pending','fail','success']).to include(@mobile_withdraw.status)
+        expect(%w(accepted pending fail success)).to include(@mobile_withdraw.status)
       end
 
       it 'should return false on validation error for charge method call' do

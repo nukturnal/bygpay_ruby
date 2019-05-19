@@ -13,9 +13,6 @@ rvm:
   - 2.4.3
   - 2.4.0
   - 2.3.0
-  - 2.2.0
-  - 2.1
-  - 2.0.0
 before_install: gem install bundler
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

@@ -11,6 +11,11 @@ module Bygpay
     end
 
     # Mobile Deposit transactions endpoint
+    def rave_deposit_endpoint
+      Bygpay.configuration.deposit_rave_path
+    end
+
+    # Mobile Deposit transactions endpoint
     def card_deposit_endpoint
       Bygpay.configuration.deposit_card_path
     end

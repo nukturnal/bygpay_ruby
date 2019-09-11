@@ -57,6 +57,10 @@ module Bygpay
       data.data.provider
     end
 
+    def redirect_link
+      data.data.rave_link
+    end
+
     # Hash strucuture
     # {
     #     "status": "success",

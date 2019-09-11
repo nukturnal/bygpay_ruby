@@ -3,7 +3,6 @@ module Bygpay
     class Card < Bygpay::Deposits
       # {
       #     "card_number" : "4111111111111111",
-      #     "amount": 1.00,
       #     "expiry_month": 6,
       #     "expiry_year": 2017,
       #     "cvv": 618,

@@ -15,6 +15,10 @@ module Bygpay
       Bygpay.configuration.deposit_rave_path
     end
 
+    def expresspay_deposit_endpoint
+      Bygpay.configuration.deposit_expresspay_path
+    end
+
     # Mobile Deposit transactions endpoint
     def card_deposit_endpoint
       Bygpay.configuration.deposit_card_path

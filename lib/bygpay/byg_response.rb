@@ -58,7 +58,7 @@ module Bygpay
     end
 
     def redirect_link
-      data.data.rave_link
+      data.data.redirect_url
     end
 
     # Hash strucuture

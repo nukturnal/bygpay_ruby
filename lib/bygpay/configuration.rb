@@ -12,6 +12,7 @@ module Bygpay
       # Preset default paths but allow for changes
       @deposit_mobile_path = '/deposits/mobile'
       @deposit_rave_path = '/deposits/rave-redirect'
+      @deposit_paystack_path = '/deposits/paystack'
       @deposit_expresspay_path = '/deposits/expresspay'
       @deposit_card_path = '/deposits/card'
       @deposit_status_overide_path = '/deposits/status-overide'

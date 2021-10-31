@@ -8,6 +8,7 @@ require 'bygpay/deposit/card'
 require 'bygpay/deposit/rave'
 require 'bygpay/deposit/express_pay'
 require 'bygpay/deposit/paystack'
+require 'bygpay/deposit/hubtel'
 require 'bygpay/withdrawals'
 require 'bygpay/withdraw/mobile'
 

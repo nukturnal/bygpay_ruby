@@ -57,6 +57,14 @@ module Bygpay
       data.data.provider
     end
 
+    def redirect_link
+      data.data.redirect_url
+    end
+
+    def meta_data
+      data.data.meta_data
+    end
+
     # Hash strucuture
     # {
     #     "status": "success",
@@ -70,7 +78,8 @@ module Bygpay
     #         "extrnx_code": null,
     #         "walletno": "0276967627",
     #         "amount": 0.1,
-    #         "provider": "TIGO"
+    #         "provider": "TIGO",
+    #         "meta_data": { "key": "value" }
     #     }
     # }
     # This may throw JSON::ParserError if the json_payload is not valid JSON.

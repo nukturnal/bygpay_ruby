@@ -66,7 +66,8 @@ mobile_payload = {
   provider: 'MTN',
   currency: 'USD', # optional
   token: '23571', # Optional (Only required for Vodafone Payments)
-  extrnx_code: nil # optional
+  extrnx_code: nil, # optional
+  meta_data: { name: "Alfred Rowe" } # pass an optional arbitary meta_data which will be returned later
 }
 result = deposit.charge(1.99, mobile_payload)
 if result
@@ -96,7 +97,8 @@ card_data = {
   cvv: 123,
   country: 'GH', # Optional country ISO code
   currency: 'USD', # Optional currency ISO code
-  card_name: 'Gifty Cobbinah' # Optional Card Hold Name
+  card_name: 'Gifty Cobbinah', # Optional Card Hold Name
+  meta_data: { store: "Gifty's Thrifts" } # pass an optional arbitary meta_data which will be returned later
 }
 result = deposit.charge(1.99, card_data)
 if result
@@ -119,6 +121,7 @@ if result
   puts deposit.uuid
   puts deposit.status # accepted, :pending, :fail, :success
   puts deposit.transaction_id
+  puts deposit.meta_data # retrieve meta_data
 else
   puts deposit.response_text
   puts deposit.status

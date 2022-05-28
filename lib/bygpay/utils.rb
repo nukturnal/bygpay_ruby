@@ -3,7 +3,7 @@ require 'http'
 module Bygpay
   module Utils
     attr_accessor :status, :response_text, :transaction_id,
-                  :uuid, :result, :response, :amount
+                  :uuid, :result, :response, :amount, :meta_data
 
     # Mobile Deposit transactions endpoint
     def mobile_deposit_endpoint
@@ -71,6 +71,7 @@ module Bygpay
       @response_text = resp.message
       @uuid = @response.uuid
       @amount = @response.amount
+      @meta_data = @response.meta_data
       @status = @response.transaction_status
       @result = @response.request_successful?
     end

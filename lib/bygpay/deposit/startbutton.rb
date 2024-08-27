@@ -1,6 +1,6 @@
 module Bygpay
   module Deposit
-    class Paystack < Bygpay::Deposits
+    class Startbutton < Bygpay::Deposits
       # {
       #     "customer_email" : "james.bolie@gmail.com",
       #     "customer_phone": null,
@@ -13,7 +13,7 @@ module Bygpay
       # }
       # Perform ExpressPay Checkout Transaction
       def charge(amount, payload = {})
-        post(paystack_deposit_endpoint, payload.merge(amount: amount))
+        post(startbutton_deposit_endpoint, payload.merge(amount: amount))
       end
     end
   end

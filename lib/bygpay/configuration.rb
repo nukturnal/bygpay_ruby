@@ -4,7 +4,7 @@ module Bygpay
                   :deposit_mobile_path, :deposit_status_overide_path, :deposit_status_path,
                   :withdraw_mobile_path, :withdraw_status_overide_path, :withdraw_status_path,
                   :deposit_card_path, :deposit_rave_path, :deposit_expresspay_path,
-                  :deposit_paystack_path, :deposit_hubtel_path
+                  :deposit_paystack_path, :deposit_hubtel_path, :deposit_startbutton_path
 
     def initialize
       @base_url = nil
@@ -14,6 +14,7 @@ module Bygpay
       @deposit_mobile_path = '/deposits/mobile'
       @deposit_rave_path = '/deposits/rave-redirect'
       @deposit_paystack_path = '/deposits/paystack'
+      @deposit_startbutton_path = '/deposits/startbutton'
       @deposit_hubtel_path = '/deposits/hubtel'
       @deposit_expresspay_path = '/deposits/expresspay'
       @deposit_card_path = '/deposits/card'

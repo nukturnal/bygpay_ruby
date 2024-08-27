@@ -23,6 +23,10 @@ module Bygpay
       Bygpay.configuration.deposit_paystack_path
     end
 
+    def startbutton_deposit_endpoint
+      Bygpay.configuration.deposit_startbutton_path
+    end
+
     def hubtel_deposit_endpoint
       Bygpay.configuration.deposit_hubtel_path
     end
